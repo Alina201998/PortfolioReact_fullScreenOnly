@@ -24,7 +24,10 @@ const Contact = () => {
         }).then((res) => res.json());
 
         if (res.success) {
-            alert(res.mess);
+            alert(res.message || "Message sent!");
+            event.target.reset();
+        } else {
+            alert(res.message || "Something went wrong.");
         }
     };
 
